@@ -21,7 +21,7 @@ input[type="number"] {
     margin: 8px 0;
 }
 
-button {
+.js-create-promises {
     width: 100%;
     background-color: #a1c52d;
     color: white;
