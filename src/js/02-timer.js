@@ -52,6 +52,7 @@ const timer = {
 
             if (days === '00' && hours === '00' && minutes === '00' && seconds === '00') {
                 clearInterval(timeId);
+                refs.buttonStartEl.setAttribute('disabled', '');
             }
         }, 1000)
     },
