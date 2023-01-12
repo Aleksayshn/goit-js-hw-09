@@ -12,16 +12,12 @@ function onFormSubmit(e) {
   const amount = Number(formEl.elements.amount.value);
   const step = Number(formEl.elements.step.value);
 
-  for (let position = 0; position < amount; position += 1) {
-    setTimeout(
-      () => {
-        position += 1
+  for (let position = 1; position <= amount; position += 1) {
         delay += step;
         createPromise(position, delay)
-          .then(successNotify({ position, delay }))
-          .catch(failureNotify({ position, delay }))
-      }, step * position);
-  }
+          .then(successNotify)
+          .catch(failureNotify) 
+      }
 };
 
 function createPromise(position, delay) {
