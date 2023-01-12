@@ -11,15 +11,15 @@ function onFormSubmit(e) {
   let delay = Number(formEl.elements.delay.value);
   const amount = Number(formEl.elements.amount.value);
   const step = Number(formEl.elements.step.value);
-  for (let position = 0; position < amount; position += 1) {
 
+  for (let position = 0; position < amount; position += 1) {
     setTimeout(
       () => {
         position += 1
         delay += step;
         createPromise(position, delay)
-          .then(({ position, delay }) => Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`))
-          .catch(({ position, delay }) => Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`))
+          .then(successNotify({ position, delay }))
+          .catch(failureNotify({ position, delay }))
       }, step * position);
   }
 };
@@ -38,4 +38,10 @@ function createPromise(position, delay) {
   });
 };
 
+function successNotify({ position, delay }) {
+  Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
+}
 
+function failureNotify({ position, delay }) {
+  Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
+}
