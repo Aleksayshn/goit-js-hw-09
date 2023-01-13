@@ -34,10 +34,10 @@ function createPromise(position, delay) {
   });
 };
 
-function successNotify({ position, delay }) {
+function successNotify({}) {
   Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
 }
 
-function failureNotify({ position, delay }) {
+function failureNotify({}) {
   Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
 }
