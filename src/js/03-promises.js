@@ -13,11 +13,11 @@ function onFormSubmit(e) {
   const step = Number(formEl.elements.step.value);
 
   for (let position = 1; position <= amount; position += 1) {
-        delay += step;
-        createPromise(position, delay)
-          .then(successNotify)
-          .catch(failureNotify) 
-      }
+    delay += step;
+    createPromise(position, delay)
+      .then(successNotify)
+      .catch(failureNotify)
+  }
 };
 
 function createPromise(position, delay) {
@@ -34,10 +34,10 @@ function createPromise(position, delay) {
   });
 };
 
-function successNotify({}) {
+function successNotify({ position, delay }) {
   Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
 }
 
-function failureNotify({}) {
+function failureNotify({ position, delay }) {
   Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`)
 }
