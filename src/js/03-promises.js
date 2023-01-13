@@ -40,5 +40,5 @@ function successNotify({ position, delay }) {
 }
 
 function failureNotify({ position, delay }) {
-  Notiflix.Notify.failure(`✅ Fulfilled promise ${position} in ${delay}ms`)
+  Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`)
 }
