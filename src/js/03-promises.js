@@ -13,10 +13,11 @@ function onFormSubmit(e) {
   const step = Number(formEl.elements.step.value);
 
   for (let position = 1; position <= amount; position += 1) {
-    delay += step;
+
     createPromise(position, delay)
       .then(successNotify)
       .catch(failureNotify)
+    delay += step;
   }
 };
 
