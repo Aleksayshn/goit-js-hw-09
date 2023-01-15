@@ -19,6 +19,7 @@ function onFormSubmit(e) {
       .catch(failureNotify)
     delay += step;
   }
+  e.target.reset();
 };
 
 function createPromise(position, delay) {
